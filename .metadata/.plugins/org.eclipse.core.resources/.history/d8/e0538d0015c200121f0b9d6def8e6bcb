@@ -1,0 +1,42 @@
+
+public class Changer {
+
+	
+	
+	// parameters
+	// amount the amount to be changed 
+	// val the different values arranged in ascending order 
+	// n the number of different values 
+	
+	public static int change( int amount, int[] val, int n ){
+		if(n==1){
+			if(amount/val[0]>0 && amount%val[0]==0){
+				return 1;
+			}else{
+				return 0;
+			}
+		}
+		int[] newVal = new int[n-1];
+		for(int i=0;i<newVal.length;i++){
+			newVal[i] = val[i];
+		}
+		if(amount/val[n-1]>0 && change(amount-val[n-1],newVal, newVal.length)>0){
+			return newVal.length+change(amount, newVal, newVal.length);
+		}else{
+			return 0+change(amount, newVal, newVal.length);
+		} 
+	}
+	//Exempel: Beloppet 12 kronor kan växlas på fyra olika sätt: 12x1kr, 10kr+2x1kr, 2x5kr+2x1kr, 
+	//5kr+7x1kr. Så change(12,sekValues,sekValues.length) skall returnera 4.
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] sekValues = {1, 5, 10, 20, 50, 100, 500, 1000};
+		int[] sekValuesTest = { 1, 5, 10 };
+		int[] specialFall = {4, 5, 6};
+		//System.out.println(change(12,sekValues,sekValues.length));
+		//System.out.println(change(7,specialFall, specialFall.length));
+		System.out.println(change(12,sekValuesTest,sekValuesTest.length));
+	}
+
+}
