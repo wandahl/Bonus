@@ -18,20 +18,15 @@ public class Permutationer {
 //	parameter (för exempel på tekniken se fibIter i den första föreläsningen om rekursion). 
 //	Funktionen får innehålla en loop. Anropa hjälpfunktionen från permutations. 
 	
-	public static void main(String[] args){
-		permutations("olof");
+	public static String permutations(String s){
+		for(int i=0;i<s.length();i++){
+			String.
+		}
 	}
-	public static void permutations(String s) {
-		permutations("", s);
-	}
-	public static void permutations(String s1, String s2) {
-		if (s2.length() > 0) {
-			for (int i = 0; i < s2.length(); i++) {
-				permutations(s1 + s2.charAt(i),
-						s2.substring(0, i) + s2.substring(i + 1));
-			}}
-		else
-			System.out.println(s1);
-	}
-}
+	
+	public static void main(String[] args) {
+	
 
+	}
+
+}

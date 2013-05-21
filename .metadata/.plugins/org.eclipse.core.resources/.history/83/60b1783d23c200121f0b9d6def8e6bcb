@@ -19,9 +19,9 @@ public class Permutationer {
 //	Funktionen får innehålla en loop. Anropa hjälpfunktionen från permutations. 
 	
 	public static void main(String[] args){
-		permutations("olof");
+		displayPermuation("olof");
 	}
-	public static void permutations(String s) {
+	public static void displayPermuation(String s) {
 		permutations("", s);
 	}
 	public static void permutations(String s1, String s2) {

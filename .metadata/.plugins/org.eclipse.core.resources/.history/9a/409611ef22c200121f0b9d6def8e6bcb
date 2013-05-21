@@ -19,15 +19,15 @@ public class Permutationer {
 //	Funktionen fŒr innehŒlla en loop. Anropa hjŠlpfunktionen frŒn permutations. 
 	
 	public static void main(String[] args){
-		permutations("olof");
+		displayPermuation("abc");
 	}
-	public static void permutations(String s) {
-		permutations("", s);
+	public static void displayPermuation(String s) {
+		displayPermuation("", s);
 	}
-	public static void permutations(String s1, String s2) {
+	public static void displayPermuation(String s1, String s2) {
 		if (s2.length() > 0) {
 			for (int i = 0; i < s2.length(); i++) {
-				permutations(s1 + s2.charAt(i),
+				displayPermuation(s1 + s2.charAt(i),
 						s2.substring(0, i) + s2.substring(i + 1));
 			}}
 		else
