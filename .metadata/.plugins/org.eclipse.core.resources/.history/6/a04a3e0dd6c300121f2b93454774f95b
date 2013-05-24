@@ -1,0 +1,41 @@
+import symbols.*;
+
+public class BinaryExpression implements Expression {
+    private SymbolTypes op;
+    private Expression leftOperand;
+    private Expression rightOperand;
+
+    public BinaryExpression( Expression leftOperand, SymbolTypes op, Expression rightOperand ) {
+        this.leftOperand = leftOperand;
+        this.op = op;
+        this.rightOperand = rightOperand;
+    }
+
+	@Override
+	public int getValue() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void prettyInfix() {
+		// TODO Auto-generated method stub
+			leftOperand.prettyInfix();
+			System.out.print(op.opChar);
+			rightOperand.prettyInfix();
+	}
+
+	@Override
+	public void prettyPostfix() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void prettyPrefix() {
+		// TODO Auto-generated method stub
+		
+	}
+
+    // ...
+}

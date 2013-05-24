@@ -1,0 +1,37 @@
+
+public class Permutationer {
+
+//	Konstruera en funktion som skriver ut alla permutationer av en strŠng. T.ex. skall anropet 
+//	permutations(ÓabcÓ); 
+//	ge utskriften 
+//	abc 
+//	 acb 
+//	 bac 
+//	 bca 
+//	 cab 
+//	 cba 
+//	Ledning: Permutationerna av strŠngen S fŒs genom att fšr varje tecken c i S addera c till varje 
+//	permutation av S« dŠr S« fŒs genom att ta bort c ur S. Ex. addera a till varje permutation av bc, b
+//	till varje permutation av ac, och c till varje permutation av ab. En strŠng av lŠngd n har n! 
+//	permutationer. 
+//	Skriv en rekursiv hjŠlpfunktion som bygger upp en permutation i en extra ackumulerande 
+//	parameter (fšr exempel pŒ tekniken se fibIter i den fšrsta fšrelŠsningen om rekursion). 
+//	Funktionen fŒr innehŒlla en loop. Anropa hjŠlpfunktionen frŒn permutations. 
+	
+	public static void main(String[] args){
+		permutations("olof");
+	}
+	public static void permutations(String s) {
+		permutations("", s);
+	}
+	public static void permutations(String s1, String s2) {
+		if (s2.length() > 0) {
+			for (int i = 0; i < s2.length(); i++) {
+				permutations(s1 + s2.charAt(i),
+						s2.substring(0, i) + s2.substring(i + 1));
+			}}
+		else
+			System.out.println(s1);
+	}
+}
+
